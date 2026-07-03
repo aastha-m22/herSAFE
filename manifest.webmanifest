@@ -1,0 +1,17 @@
+{
+  "name": "herSAFE",
+  "short_name": "herSAFE",
+  "description": "Quiet, hands-free personal safety. herSAFE watches over you and reaches your people the moment something goes wrong.",
+  "start_url": ".",
+  "scope": ".",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#F3F1EC",
+  "theme_color": "#F3F1EC",
+  "categories": ["health", "lifestyle", "utilities"],
+  "icons": [
+    { "src": "icons/icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "icons/icon-512.png", "sizes": "512x512", "type": "image/png" },
+    { "src": "icons/maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}

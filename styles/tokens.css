@@ -1,0 +1,133 @@
+/* ============================================================
+   herSAFE · design tokens
+   One source of truth for color, type, space, motion, elevation.
+   Themed via [data-theme] on <html>; falls back to system scheme.
+   ============================================================ */
+
+:root {
+  /* ---- brand state hues (calm, desaturated — never neon) ---- */
+  --sage:        #6E8B7B;   /* protected / calm  */
+  --sage-deep:   #557061;
+  --amber:       #B5853A;   /* elevated / caution */
+  --brick:       #BC4A3C;   /* emergency / triggered */
+  --brick-deep:  #A33C30;
+
+  /* ---- type ---- */
+  --font: 'Hanken Grotesk', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  --fs-display: clamp(2.15rem, 8.5vw, 2.9rem);
+  --fs-h1: 1.35rem;
+  --fs-h2: 1.05rem;
+  --fs-body: 0.95rem;
+  --fs-sm: 0.82rem;
+  --fs-xs: 0.72rem;
+  --tracking-eyebrow: 0.14em;
+  --weight-reg: 400; --weight-med: 500; --weight-semi: 600; --weight-bold: 700; --weight-black: 800;
+
+  /* ---- radius & space ---- */
+  --r-sm: 12px; --r-md: 16px; --r-lg: 22px; --r-xl: 28px; --r-pill: 999px;
+  --sp-1: 4px; --sp-2: 8px; --sp-3: 12px; --sp-4: 16px; --sp-5: 22px; --sp-6: 30px; --sp-7: 44px;
+  --maxw: 460px;
+
+  /* ---- motion ---- */
+  --ease: cubic-bezier(.32, .72, 0, 1);
+  --ease-out: cubic-bezier(.16, 1, .3, 1);
+  --dur-1: 120ms; --dur-2: 220ms; --dur-3: 340ms; --dur-4: 520ms;
+}
+
+/* ============ LIGHT (default) ============ */
+:root, [data-theme="light"] {
+  color-scheme: light;
+  --bg:          #F3F1EC;
+  --bg-tint:     #EFECE5;
+  --surface:     #FBFAF7;
+  --surface-2:   #FFFFFF;
+  --hairline:    #E4E1D9;
+  --hairline-soft:#ECE9E2;
+
+  --ink:         #21231F;
+  --ink-soft:    #63665E;
+  --ink-faint:   #9A9D94;
+  --on-accent:   #FFFFFF;
+
+  --sage-wash:   #E7EDE8;
+  --amber-wash:  #F1EAD9;
+  --brick-wash:  #F3E7E3;
+
+  --accent: var(--sage);
+
+  /* glass: used sparingly on sheets / overlays / bars */
+  --glass-bg:    rgba(251, 250, 247, 0.72);
+  --glass-border:rgba(255, 255, 255, 0.55);
+  --glass-blur:  saturate(160%) blur(20px);
+
+  --shadow-1: 0 1px 2px rgba(33,35,31,.05), 0 6px 18px rgba(33,35,31,.05);
+  --shadow-2: 0 2px 6px rgba(33,35,31,.06), 0 18px 46px rgba(33,35,31,.10);
+  --shadow-press: 0 1px 2px rgba(33,35,31,.06);
+
+  /* soft, desaturated ambient wash keyed to state */
+  --wash-idle:   radial-gradient(120% 60% at 50% -8%, rgba(110,139,123,.10), transparent 62%);
+  --wash-elev:   radial-gradient(120% 60% at 50% -8%, rgba(181,133,58,.14), transparent 60%);
+  --wash-trig:   radial-gradient(130% 70% at 50% -4%, rgba(188,74,60,.18), transparent 64%);
+}
+
+/* ============ DARK ============ */
+[data-theme="dark"] {
+  color-scheme: dark;
+  --bg:          #14161A;
+  --bg-tint:     #171A1F;
+  --surface:     #1B1E24;
+  --surface-2:   #21252C;
+  --hairline:    #2C313A;
+  --hairline-soft:#242932;
+
+  --ink:         #ECEEF0;
+  --ink-soft:    #A2A8B2;
+  --ink-faint:   #6B7280;
+  --on-accent:   #0E1512;
+
+  --sage:        #86A895;   /* lift hues for dark legibility */
+  --sage-deep:   #9FBBAB;
+  --amber:       #D6A65A;
+  --brick:       #E4685A;
+  --brick-deep:  #F08276;
+
+  --sage-wash:   #1E2A24;
+  --amber-wash:  #2A2418;
+  --brick-wash:  #2C1D1A;
+
+  --accent: var(--sage);
+
+  --glass-bg:    rgba(27, 30, 36, 0.66);
+  --glass-border:rgba(255, 255, 255, 0.08);
+  --glass-blur:  saturate(150%) blur(22px);
+
+  --shadow-1: 0 1px 2px rgba(0,0,0,.30), 0 8px 22px rgba(0,0,0,.36);
+  --shadow-2: 0 2px 8px rgba(0,0,0,.34), 0 22px 50px rgba(0,0,0,.46);
+  --shadow-press: 0 1px 2px rgba(0,0,0,.4);
+
+  --wash-idle:   radial-gradient(120% 60% at 50% -8%, rgba(134,168,149,.12), transparent 62%);
+  --wash-elev:   radial-gradient(120% 60% at 50% -8%, rgba(214,166,90,.14), transparent 60%);
+  --wash-trig:   radial-gradient(130% 70% at 50% -4%, rgba(228,104,90,.20), transparent 64%);
+}
+
+/* respect system preference when the user hasn't chosen explicitly */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme]) {
+    color-scheme: dark;
+    --bg:#14161A; --bg-tint:#171A1F; --surface:#1B1E24; --surface-2:#21252C;
+    --hairline:#2C313A; --hairline-soft:#242932;
+    --ink:#ECEEF0; --ink-soft:#A2A8B2; --ink-faint:#6B7280; --on-accent:#0E1512;
+    --sage:#86A895; --sage-deep:#9FBBAB; --amber:#D6A65A; --brick:#E4685A; --brick-deep:#F08276;
+    --sage-wash:#1E2A24; --amber-wash:#2A2418; --brick-wash:#2C1D1A; --accent:var(--sage);
+    --glass-bg:rgba(27,30,36,.66); --glass-border:rgba(255,255,255,.08); --glass-blur:saturate(150%) blur(22px);
+    --shadow-1:0 1px 2px rgba(0,0,0,.30),0 8px 22px rgba(0,0,0,.36);
+    --shadow-2:0 2px 8px rgba(0,0,0,.34),0 22px 50px rgba(0,0,0,.46);
+    --wash-idle:radial-gradient(120% 60% at 50% -8%, rgba(134,168,149,.12), transparent 62%);
+    --wash-elev:radial-gradient(120% 60% at 50% -8%, rgba(214,166,90,.14), transparent 60%);
+    --wash-trig:radial-gradient(130% 70% at 50% -4%, rgba(228,104,90,.20), transparent 64%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root { --dur-1:1ms; --dur-2:1ms; --dur-3:1ms; --dur-4:1ms; }
+}

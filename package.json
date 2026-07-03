@@ -1,0 +1,13 @@
+{
+  "name": "hersafe",
+  "version": "2.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Quiet, hands-free personal-safety PWA — voice/shake/manual SOS with live location, trusted-circle alerts, and offline support.",
+  "scripts": {
+    "dev": "python3 -m http.server 8137",
+    "test": "node --test"
+  },
+  "engines": { "node": ">=18" },
+  "license": "MIT"
+}
