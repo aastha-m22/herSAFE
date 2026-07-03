@@ -18,7 +18,7 @@ herSAFE watches over you in the background and reaches your trusted circle the m
 |---|---|---|
 | ![Emergency](docs/emergency.png) | ![Timer](docs/timer.png) | ![History](docs/history.png) |
 
-*(Replace the images in `docs/` with your own captures.)*
+
 
 ---
 
