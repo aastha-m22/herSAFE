@@ -166,7 +166,7 @@ A per-user webhook can also be set in-app under **Settings â†’ Alert webhook** â
 - End-to-end encrypted location links and short-lived share tokens
 - Fall detection and geofenced auto-arming
 - Trusted-contact companion view with a live map
-- Internationalisation / multi-language phrases
+
 
 ## License
 
