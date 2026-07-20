@@ -1,6 +1,6 @@
 # herSAFE
 
-**Quiet, hands-free personal safety — a production-grade Progressive Web App.**
+**Quiet, hands-free personal safety — a production grade Progressive Web App (PWA) .**
 
 herSAFE watches over you in the background and reaches your trusted circle the moment something goes wrong. It activates on a spoken phrase, a hard shake, or a press-and-hold — then shares your live location, notifies your people across multiple channels, and can record audio and blink your flashlight as evidence and a beacon. It installs like a native app and works offline.
 
